@@ -76,11 +76,24 @@ function moveCarriage() {
     `translate(${-column * stepPx}px, ${jitter}px)`;
 }
 
-/* DOWNLOAD */
+/* DOWNLOAD BUTTON */
 document.getElementById("download").onclick = () => {
   const blob = new Blob([text], { type: "text/plain" });
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
   a.download = "manuscript.txt";
   a.click();
+};
+
+/* RESET BUTTON */
+document.getElementById("reset").onclick = () => {
+  if (!text) return;
+
+  text = "";
+  column = 0;
+  lines = 0;
+
+  page.textContent = "";
+  pageWrapper.style.transform = "translateY(0)";
+  carriage.style.transform = "translateX(0)";
 };
