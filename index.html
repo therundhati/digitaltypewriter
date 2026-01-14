@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Digital Typewriter</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- TOP TOOLBAR -->
+<div class="toolbar">
+  <button id="download">Download</button>
+  <button id="reset">Reset</button>
+</div>
+
+<!-- TYPEWRITER CONTAINER -->
 <div class="typewriter">
 
+  <!-- PAPER -->
   <div class="paper">
     <div id="page-wrapper">
       <pre id="page"></pre>
     </div>
   </div>
 
+  <!-- MACHINE -->
   <div class="machine">
-    <img src="images/typewriter-carriage.png" id="carriage" alt="carriage" />
-    <img src="images/typewriter-base.png" alt="typewriter base" />
+    <img src="images/typewriter-carriage.png" id="carriage" alt="carriage">
+    <img src="images/typewriter-base.png" alt="typewriter base">
   </div>
 
 </div>
 
-<button id="download">Download Manuscript</button>
-
+<!-- SOUNDS -->
 <audio id="keySound" src="sounds/key.mp3" preload="auto"></audio>
 <audio id="returnSound" src="sounds/return.mp3" preload="auto"></audio>
 
