@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 20px 0;
-  background: #f8f2e4; /* aged paper background behind everything */
+  background: #f2f2f2; /* greyish-white like Word */
   font-family: "Courier New", monospace;
   text-align: center;
   color: #111;
@@ -11,7 +11,7 @@ body {
 /* TOP TOOLBAR */
 .toolbar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 10px;
   padding: 0 20px 10px 20px;
 }
@@ -21,38 +21,47 @@ body {
   font-size: 13px;
   padding: 6px 12px;
   cursor: pointer;
-  background: #e0d4b0;
-  border: 1px solid #b5a77a;
+  background: #e0e0e0;
+  border: 1px solid #b5b5b5;
   border-radius: 3px;
 }
 
 .toolbar button:hover {
-  background: #d6c99a;
+  background: #d6d6d6;
 }
 
 /* TYPEWRITER CONTAINER */
-.typewriter {
-  width: 820px;
+.typewriter-container {
+  width: 900px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* PAPER + COLOR LEGEND */
+.paper-wrapper {
+  display: flex;
+  gap: 12px; /* space between paper and color legend */
 }
 
 /* PAPER */
 .paper {
   position: relative;
+  width: 700px;
   height: 260px;
-  background: #fbf6eb; /* aged paper */
+  background: #fcfcf7; /* slightly off-white */
   box-shadow:
-    inset 0 0 8px rgba(0,0,0,.15),
-    0 6px 18px rgba(0,0,0,.25);
+    inset 0 0 8px rgba(0,0,0,.1),
+    0 4px 12px rgba(0,0,0,.2);
   overflow: hidden;
-  margin-bottom: -8px;
   border-radius: 2px;
 }
 
 /* TEXT */
 #page-wrapper {
   position: absolute;
-  bottom: 24px; /* start typing near bottom */
+  bottom: 40px; /* start above carriage overlap */
   width: 100%;
   padding: 0 20px;
   transition: transform 0.08s linear;
@@ -64,14 +73,37 @@ body {
   line-height: 18px;
   white-space: pre-wrap;
   word-break: break-word;
-  text-align: left; /* left aligned text */
+  text-align: left; /* left-aligned */
+}
+
+/* COLOR LEGEND */
+.color-legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 20px;
+  gap: 8px;
+}
+
+.color-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.color-btn.active {
+  border: 3px solid #333;
 }
 
 /* TYPEWRITER MACHINE */
 .machine {
   position: relative;
-  margin-top: 6px;
+  margin-top: 0;
   filter: drop-shadow(0 16px 22px rgba(0,0,0,.35));
+  width: 100%;
 }
 
 .machine img {
@@ -82,7 +114,7 @@ body {
 /* CARRIAGE */
 #carriage {
   position: absolute;
-  top: 0;
+  top: -20px; /* overlap paper */
   left: 0;
   pointer-events: none;
   transition: transform 0.04s linear;
