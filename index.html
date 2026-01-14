@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Digital Typewriter</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Digital Typewriter</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -13,17 +13,26 @@
   <button id="reset">Reset</button>
 </div>
 
-<!-- TYPEWRITER CONTAINER -->
-<div class="typewriter">
+<!-- MAIN TYPEWRITER AREA -->
+<div class="typewriter-container">
 
   <!-- PAPER -->
-  <div class="paper">
-    <div id="page-wrapper">
-      <pre id="page"></pre>
+  <div class="paper-wrapper">
+    <div class="paper">
+      <div id="page-wrapper">
+        <pre id="page"></pre>
+      </div>
+    </div>
+
+    <!-- COLOR LEGEND / Ink selection -->
+    <div class="color-legend">
+      <div class="color-btn active" data-color="#000000" style="background:#000;"></div>
+      <div class="color-btn" data-color="#0000FF" style="background:#00f;"></div>
+      <div class="color-btn" data-color="#FF0000" style="background:#f00;"></div>
     </div>
   </div>
 
-  <!-- MACHINE -->
+  <!-- TYPEWRITER MACHINE -->
   <div class="machine">
     <img src="images/typewriter-carriage.png" id="carriage" alt="carriage">
     <img src="images/typewriter-base.png" alt="typewriter base">
