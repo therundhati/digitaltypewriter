@@ -8,20 +8,24 @@
 <body>
 
 <div class="typewriter">
+
   <div class="paper">
-    <pre id="page"></pre>
+    <div id="page-wrapper">
+      <pre id="page"></pre>
+    </div>
   </div>
 
   <div class="machine">
-    <img src="images/typewriter-carriage.png" id="carriage" />
-    <img src="images/typewriter-base.png" />
+    <img src="images/typewriter-carriage.png" id="carriage" alt="carriage" />
+    <img src="images/typewriter-base.png" alt="typewriter base" />
   </div>
+
 </div>
 
-<button id="download">Download Text</button>
+<button id="download">Download Manuscript</button>
 
-<audio id="keySound" src="sounds/key.mp3"></audio>
-<audio id="returnSound" src="sounds/return.mp3"></audio>
+<audio id="keySound" src="sounds/key.mp3" preload="auto"></audio>
+<audio id="returnSound" src="sounds/return.mp3" preload="auto"></audio>
 
 <script src="script.js"></script>
 </body>
